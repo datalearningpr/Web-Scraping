@@ -1,0 +1,11 @@
+{
+  "name": "node-scrape",
+  "version": "1.0.0",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.23",
+    "puppeteer": "^1.6.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
