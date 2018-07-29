@@ -50,8 +50,3 @@ if __name__ == "__main__":
         th.join()
 
     print("--- %s seconds ---" % (time.time() - start_time))
-
-
-
-
-
