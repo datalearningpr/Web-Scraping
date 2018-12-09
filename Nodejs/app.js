@@ -4,12 +4,11 @@ const iconv = require('iconv-lite');
 const cheerio = require('cheerio');
 const request = require('request-promise');
 
+let j = request.jar()
+request = request.defaults({jar: j})
 const sp = new ScrapeProxy();
 
 async function task(i) {
-
-  let j = request.jar()
-  let result = [];
 
   const tempHead = sp.getRandomUserAgent();
   const content = await request.get({
@@ -17,6 +16,8 @@ async function task(i) {
     uri: `${i}`,
     jar: j,
     encoding: null,
+    // followRedirect: true,
+    // simple: false,
     }).then(d => {
       let str = iconv.decode(d, "UTF-8");
       const $ = cheerio.load(str);
